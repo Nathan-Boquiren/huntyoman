@@ -1,0 +1,259 @@
+/* Hero Section */
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    overflow-y: hidden;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, -14%);
+    left: 50%;
+    width: 100%;
+    min-width: 1000px;
+    overflow-x: hidden;
+
+}
+
+.hero img:nth-child(1) {
+    filter: saturate(0);
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.hero img:nth-child(3) {
+    z-index: 3;
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero::before {
+    z-index: 1;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: radial-gradient(transparent, rgba(0, 0, 0, 0.6));
+}
+
+.hero::after {
+    z-index: 3;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(transparent, transparent, transparent, var(--dark-color));
+}
+
+h1 {
+    margin-top: 10%;
+    margin-top: clamp(140px, 10%, 300px);
+    z-index: 1;
+    color: var(--dark-color);
+    color: var(--accent-color);
+    font-size: 10vw;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Featured Music Section */
+
+.featured-music {
+    display: flex;
+    width: 100%;
+    padding: 0 50px;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 80vh;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.featured-music .text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.featured-music .text h2 {
+    font-family: var(--header-font);
+    font-weight: normal;
+    font-size: 5rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.829), 0 0 10px rgba(255, 255, 255, 0.6667), 0 0 15px rgba(255, 255, 255, 0.3333);
+}
+
+.featured-music .text p {
+    font-size: 1.5rem;
+}
+
+.featured-music .text button.cta {
+    display: inline-block;
+    width: 300px;
+    color: var(--accent-color);
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    font-size: 2.5rem;
+    padding: 10px 20px;
+    border-radius: 100vmax;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.featured-music .text button.cta:hover {
+    color: var(--dark-color);
+    background-color: var(--accent-color);
+    transform: translateY(-7px);
+    box-shadow: 0 6px 0 rgba(255, 0, 0, 0.5);
+}
+
+.featured-music .text button.cta:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+.featured-music .image img {
+    width: clamp(300px, 40vw, 500px);
+    height: auto;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.featured-music .image img:hover {
+    transform: scale(1.02);
+}
+
+
+/* Links Section */
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+    padding: 50px 100px;
+    min-height: 80vh;
+    flex-wrap: wrap;
+}
+
+.link-wrapper {
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* gap: 50px; */
+    height: 10vw;
+    cursor: pointer;
+    position: relative;
+}
+
+.link-wrapper img {
+    width: clamp(70px, 100%, 200px);
+    height: auto;
+    transition: all 0.3s ease;
+    transform-origin: 50% 100%;
+    filter: saturate(1);
+}
+
+.link-wrapper::before {
+    content: '';
+    position: absolute;
+    width: clamp(70px, 100%, 200px);
+    aspect-ratio: 1;
+    transform-origin: 50% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: 50% 50%;
+    z-index: -1;
+    filter: blur(10px) opacity(0.7);
+    transition: 0.3s ease;
+}
+
+.link-wrapper:nth-child(1)::before {
+    background-image: url(../imgs/link-icons/spotify-logo.webp);
+}
+
+.link-wrapper:nth-child(2)::before {
+    background-image: url(../imgs/link-icons/apple-music-logo.webp);
+}
+
+.link-wrapper:nth-child(3)::before {
+    background-image: url(../imgs/link-icons/amazon-music-logo.webp);
+}
+
+.link-wrapper:nth-child(4)::before {
+    background-image: url(../imgs/link-icons/youtube-logo.webp);
+}
+
+.link-wrapper::after {
+    content: '';
+    width: 50%;
+    min-width: 70px;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    filter: blur(10px) opacity(0.5);
+    z-index: -2;
+    transition: all 0.3s ease;
+}
+
+.link-wrapper:nth-child(1)::after {
+    background-color: #1ED760;
+}
+
+.link-wrapper:nth-child(2)::after {
+    background-color: rgb(223, 93, 255);
+}
+
+.link-wrapper:nth-child(3)::after {
+    background-color: #1e8dd7;
+}
+
+.link-wrapper:nth-child(4)::after {
+    background-color: #ff0000;
+}
+
+.link-wrapper h3 {
+    font-size: 1.8rem;
+    font-weight: 100;
+    text-align: center;
+    margin-top: auto;
+    transition: all 0.3s ease;
+}
+
+.link-wrapper:hover img, .link-wrapper:hover::before {
+    transform: scale(1.05);
+    filter: saturate(1.5);
+
+}
+
+.link-wrapper:hover::before {
+    filter: blur(12px) opacity(0.8);
+}
+
+.link-wrapper:hover::after {
+    transform: translateX(-50%) scale(1.1);
+    filter: blur(10px) opacity(0.6);
+}
+
+.link-wrapper:hover h3 {
+    font-weight: 400;
+}
