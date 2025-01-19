@@ -1,3 +1,9 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 /* Hero Section */
 
 .hero {
@@ -9,6 +15,7 @@
     position: relative;
     z-index: 0;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .hero img {
@@ -19,7 +26,6 @@
     width: 100%;
     min-width: 1000px;
     overflow-x: hidden;
-
 }
 
 .hero img:nth-child(1) {
@@ -72,7 +78,7 @@ h1 {
 .featured-music {
     display: flex;
     width: 100%;
-    padding: 0 50px;
+    padding: 0 5vw;
     align-items: center;
     justify-content: space-around;
     min-height: 80vh;
@@ -86,29 +92,43 @@ h1 {
     gap: 20px;
 }
 
-.featured-music .text h2 {
+h2 {
     font-family: var(--header-font);
     font-weight: normal;
-    font-size: 5rem;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.829), 0 0 10px rgba(255, 255, 255, 0.6667), 0 0 15px rgba(255, 255, 255, 0.3333);
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
-.featured-music .text p {
-    font-size: 1.5rem;
+p {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
 }
 
 .featured-music .text button.cta {
-    display: inline-block;
-    width: 300px;
+    width: clamp(200px, 35vw, 300px);
     color: var(--accent-color);
     font-weight: 600;
     background-color: transparent;
     border: 2px solid var(--accent-color);
-    font-size: 2.5rem;
+    font-size: clamp(1.3rem, 3vw, 2.5rem);
     padding: 10px 20px;
     border-radius: 100vmax;
     transition: all 0.2s ease;
     cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .featured-music .text h2 {
+        text-align: center;
+    }
+
+    .featured-music .text p {
+        margin: 0 10vw;
+        text-align: center;
+    }
+
+    .featured-music .text button {
+        margin: 0 auto;
+    }
 }
 
 .featured-music .text button.cta:hover {
@@ -123,28 +143,69 @@ h1 {
     box-shadow: none;
 }
 
+.featured-music .image {
+    position: relative;
+    border-radius: 20px;
+    height: clamp(260px, 40vw, 500px);
+}
+
 
 .featured-music .image img {
-    width: clamp(300px, 40vw, 500px);
+    width: clamp(260px, 40vw, 500px);
     height: auto;
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
+
+    position: relative;
 }
 
 .featured-music .image img:hover {
     transform: scale(1.02);
 }
 
+.featured-music .image::before, .featured-music .image::after {
+    content: "";
+    position: absolute;
+    inset: -0.2rem;
+    z-index: -1;
+    background: conic-gradient(from var(--gradient-angle), red, rgba(255, 0, 0, 0.2), red);
+    border-radius: inherit;
+    animation: rotation 2s linear infinite;
+}
+
+.featured-music .image::after {
+    filter: blur(2rem);
+    opacity: 0.5;
+}
+
+@keyframes rotation {
+    0% {
+        --gradient-angle: 0deg;
+    }
+
+    100% {
+        --gradient-angle: 360deg;
+    }
+}
+
 
 /* Links Section */
 
 .links {
+    padding: 50px 10vw;
+    min-height: 80vh;
+}
+
+.links h2 {
+    text-align: center;
+    margin-bottom: 8vw;
+}
+
+.links-container {
     display: flex;
     justify-content: space-around;
     gap: 100px;
-    padding: 50px 100px;
-    min-height: 80vh;
     flex-wrap: wrap;
 }
 
@@ -154,7 +215,6 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* gap: 50px; */
     height: 10vw;
     cursor: pointer;
     position: relative;
@@ -232,25 +292,25 @@ h1 {
 }
 
 .link-wrapper h3 {
-    font-size: 1.8rem;
+    font-size: clamp(1.1rem, 3vw, 1.8rem);
     font-weight: 100;
     text-align: center;
-    margin-top: auto;
+    margin-top: 15px;
     transition: all 0.3s ease;
 }
 
-.link-wrapper:hover img, .link-wrapper:hover::before {
+.link-wrapper:hover img {
     transform: scale(1.05);
     filter: saturate(1.5);
-
 }
 
 .link-wrapper:hover::before {
-    filter: blur(12px) opacity(0.8);
+    filter: blur(12px) opacity(0.8) saturate(1.5);
+    transform: translateX(-50%) scale(1.1);
 }
 
 .link-wrapper:hover::after {
-    transform: translateX(-50%) scale(1.1);
+    transform: scale(1.1);
     filter: blur(10px) opacity(0.6);
 }
 
