@@ -169,7 +169,7 @@ p {
     position: absolute;
     inset: -0.2rem;
     z-index: -1;
-    background: conic-gradient(from var(--gradient-angle), red, rgba(255, 0, 0, 0.2), red);
+    background: conic-gradient(from var(--gradient-angle), red, orange, yellow, orange, red);
     border-radius: inherit;
     animation: rotation 2s linear infinite;
 }
@@ -218,6 +218,7 @@ p {
     height: 10vw;
     cursor: pointer;
     position: relative;
+    margin: 10px 0;
 }
 
 .link-wrapper img {
