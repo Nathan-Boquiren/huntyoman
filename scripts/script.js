@@ -6,25 +6,46 @@ cl(
 
 // === DOM Elements ===
 
-let featuredMusicBtn = document.getElementById("featured-music-btn");
-let featuredMusicImg = document.getElementById("featured-music-img");
+const featuredMusicBtn = document.getElementById("featured-music-btn");
+const featuredMusicImg = document.getElementById("featured-music-img");
+
+const spotifyLinkWpr = document.getElementById("spotify-link");
+const appleLinkWpr = document.getElementById("apple-link");
+const amazonLinkWpr = document.getElementById("amazon-link");
+const youtubeLinkWpr = document.getElementById("youtube-link");
 
 // === Variables and links ===
 
-const spotifyLink =
-  "https://open.spotify.com/artist/1cdUa57VKRe88ODZxlO8WW?si=HaMpoMNWQUaIHdkXKI5H6Q";
-
-const appleMusicLink = "https://music.apple.com/us/artist/huntyoman/1778314773";
-
-const amazonMusicLink = "https://music.amazon.com/artists/B0DN1MXLYH/huntyoman";
-
-const youTubeLink = "https://www.youtube.com/@Hunt_YoMan";
+const links = {
+  "spotify-link":
+    "https://open.spotify.com/artist/1cdUa57VKRe88ODZxlO8WW?si=HaMpoMNWQUaIHdkXKI5H6Q",
+  "apple-link": "https://music.apple.com/us/artist/huntyoman/1778314773",
+  "amazon-link": "https://music.amazon.com/artists/B0DN1MXLYH/huntyoman",
+  "youtube-link": "https://www.youtube.com/@Hunt_YoMan",
+};
 
 // Button click events
 
 featuredMusicBtn.addEventListener("click", () => {
-  window.location = spotifyLink;
+  window.location = links["spotify-link"];
 });
 featuredMusicImg.addEventListener("click", () => {
-  window.location = spotifyLink;
+  window.location = links["spotify-link"];
 });
+
+function musicLinkClick(name) {
+  if (links[name]) {
+    window.location = links[name];
+  } else {
+    cl("Invalid link");
+  }
+}
+
+let musicLinks = document.getElementsByClassName("link-wrapper");
+
+for (let link of musicLinks) {
+  link.addEventListener("click", function () {
+    musicLinkClick(link.id);
+    cl(link.id);
+  });
+}
