@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* === Variables === */
 
@@ -58,7 +58,7 @@ nav ul {
     display: flex;
     justify-content: space-around;
     gap: 50px;
-    padding: 10px 50px;
+    padding: 0px 20px;
 }
 
 nav ul li {
@@ -74,5 +74,5 @@ nav ul li a {
     text-decoration: none;
     font-family: var(--paragraph-font);
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }

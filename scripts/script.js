@@ -6,6 +6,11 @@ cl(
 
 // === DOM Elements ===
 
+const daysLeftWrapper = document.getElementById("days-left");
+const hoursLeftWrapper = document.getElementById("hours-left");
+const minutesLeftWrapper = document.getElementById("minutes-left");
+const secondsLeftWrapper = document.getElementById("seconds-left");
+
 const featuredMusicBtn = document.getElementById("featured-music-btn");
 const featuredMusicImg = document.getElementById("featured-music-img");
 
@@ -24,7 +29,47 @@ const links = {
   "youtube-link": "https://www.youtube.com/@Hunt_YoMan",
 };
 
-// Button click events
+//
+//
+//
+// ↓↓↓↓↓↓↓↓↓↓ CHANGE THIS VARIABLE TO NEW RELEASE DATE ↓↓↓↓↓↓↓↓↓↓
+
+let releaseDate = new Date(`1/30/2025`);
+
+// ↑↑↑↑↑↑↑↑↑↑ CHANGE THIS VARIABLE TO NEW RELEASE DATE ↑↑↑↑↑↑↑↑↑↑
+//
+//
+//
+
+// === Release Countdown ===
+
+function updateCountdown() {
+  let currentDate = new Date();
+  let timeLeft = releaseDate - currentDate;
+
+  let seconds = Math.floor((timeLeft / 1000) % 60)
+    .toString()
+    .padStart(2, "0");
+  let minutes = Math.floor((timeLeft / (1000 * 60)) % 60)
+    .toString()
+    .padStart(2, "0");
+  let hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24)
+    .toString()
+    .padStart(2, "0");
+  let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
+    .toString()
+    .padStart(2, "0");
+
+  daysLeftWrapper.innerHTML = `<div class="time-left-number">${days}</div><div class="time-unit">days</div>`;
+  hoursLeftWrapper.innerHTML = `<div class="time-left-number">${hours}</div><div class="time-unit">hours</div>`;
+  minutesLeftWrapper.innerHTML = `<div class="time-left-number">${minutes}</div><div class="time-unit">minutes</div>`;
+  secondsLeftWrapper.innerHTML = `<div class="time-left-number">${seconds}</div><div class="time-unit">seconds</div>`;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// === Button click events ===
 
 featuredMusicBtn.addEventListener("click", () => {
   window.location = links["spotify-link"];
