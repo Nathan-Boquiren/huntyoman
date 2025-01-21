@@ -31,10 +31,9 @@ const links = {
 
 //
 //
-//
 // ↓↓↓↓↓↓↓↓↓↓ CHANGE THIS VARIABLE TO NEW RELEASE DATE ↓↓↓↓↓↓↓↓↓↓
 
-let releaseDate = new Date(`1/30/2025`);
+let releaseDate = new Date(`1/21/2025`);
 
 // ↑↑↑↑↑↑↑↑↑↑ CHANGE THIS VARIABLE TO NEW RELEASE DATE ↑↑↑↑↑↑↑↑↑↑
 //
@@ -46,6 +45,17 @@ let releaseDate = new Date(`1/30/2025`);
 function updateCountdown() {
   let currentDate = new Date();
   let timeLeft = releaseDate - currentDate;
+
+  if (timeLeft <= 0) {
+    clearInterval(countdownInterval);
+    daysLeftWrapper.innerHTML = `<div class="time-left-number">00</div><div class="time-unit">days</div>`;
+    hoursLeftWrapper.innerHTML = `<div class="time-left-number">00</div><div class="time-unit">hours</div>`;
+    minutesLeftWrapper.innerHTML = `<div class="time-left-number">00</div><div class="time-unit">minutes</div>`;
+    secondsLeftWrapper.innerHTML = `<div class="time-left-number">00</div><div class="time-unit">seconds</div>`;
+    cl("Release date reached");
+    document.getElementById("release-countdown").style.display = "none";
+    return;
+  }
 
   let seconds = Math.floor((timeLeft / 1000) % 60)
     .toString()
@@ -66,7 +76,7 @@ function updateCountdown() {
   secondsLeftWrapper.innerHTML = `<div class="time-left-number">${seconds}</div><div class="time-unit">seconds</div>`;
 }
 
-setInterval(updateCountdown, 1000);
+let countdownInterval = setInterval(updateCountdown, 1000);
 updateCountdown();
 
 // === Button click events ===
@@ -94,3 +104,11 @@ for (let link of musicLinks) {
     cl(link.id);
   });
 }
+
+// === Featured Music Parallax Effect ===
+
+window.addEventListener("scroll", function () {
+  const parallax = document.querySelector(".featured-music");
+  let scrollPosition = window.pageYOffset;
+  parallax.style.backgroundPositionY = `${-scrollPosition * 0.1}px`;
+});
