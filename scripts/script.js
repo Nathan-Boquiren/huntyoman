@@ -123,3 +123,9 @@ window.addEventListener("scroll", function () {
   let scrollPosition = window.pageYOffset;
   parallax2.style.backgroundPositionY = `${-scrollPosition * 0.3 + 670}px`;
 });
+
+window.addEventListener("scroll", function () {
+  const parallax3 = document.querySelector(".newsletter-section");
+  let scrollPosition = window.pageYOffset;
+  parallax3.style.backgroundPositionY = `${-scrollPosition * 0.3 + 1250}px`;
+});
