@@ -67,8 +67,6 @@
 
 
             <div class="links-container">
-
-
                 <div id="spotify-link" class="link-wrapper">
                     <img src="imgs/link-icons/spotify-logo.webp" alt="Spotify Icon">
                     <h3>Spotify</h3>
@@ -88,27 +86,38 @@
             </div>
         </section>
 
-        <section class="embedded-spotify">
+        <!-- <section class="embedded-spotify">
             <iframe src="https://open.spotify.com/embed/album/5f6XZzv6QJZ3Z3ZzZzZzZz" width="300" height="380"
                 frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-        </section>
+        </section> -->
+
         <section class="about-section">
-            <h2>A little bit about me...</h2>
-            <p>
-                I am a musician, artist, and rapper from the United States. I have been making music for over 10 years
-                and have released multiple albums and singles. My music is a mix of hip-hop, rap, and pop. I am inspired
-                by artists such as Kanye West, Drake, and Kendrick Lamar. I am currently working on my next album and
-                will be releasing new music soon. Thank you for your support!
-            </p>
-            <button><a href="pages/about.html">Read full bio</a></button>
+            <div class="image-wrapper"></div>
+            <div class="text-wrapper">
+                <h2>A little bit about me...</h2>
+                <p>
+                    I am a musician, artist, and rapper from the United States. I have been making music for over 10
+                    years
+                    and have released multiple albums and singles. My music is a mix of hip-hop, rap, and pop. I am
+                    inspired
+                    by artists such as Kanye West, Drake, and Kendrick Lamar. I am currently working on my next album
+                    and
+                    will be releasing new music soon. Thank you for your support!
+                </p>
+                <button id="about-btn"><a href="pages/about.html">Read full bio
+                        →</a></button>
+            </div>
         </section>
 
-        <section class="newsletter-sign-up">
-            <h2>Sign up for my newsletter</h2>
+        <section class="newsletter-section">
+            <h2>Stay Updated</h2>
             <p>Stay up to date with my latest music releases, news, and events by signing up for my newsletter.</p>
             <form action="" method="POST">
-                <input type="email" name="email" placeholder="Enter your email address" required>
+                <div class="input-wrapper">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
                 <button type="submit">Sign Up</button>
             </form>
         </section>

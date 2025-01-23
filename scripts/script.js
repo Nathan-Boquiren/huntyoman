@@ -1,7 +1,7 @@
 let cl = console.log;
 
 cl(
-  "This website was created by Nathan Boquiren. For your own personal website, or an online resume, contact me at nathanjboquiren@gmail."
+  "This website was created by Nathan Boquiren. For your own personal website, or an online resume/cv, contact me at nathanjboquiren@gmail."
 );
 
 // === DOM Elements ===
@@ -18,6 +18,8 @@ const spotifyLinkWpr = document.getElementById("spotify-link");
 const appleLinkWpr = document.getElementById("apple-link");
 const amazonLinkWpr = document.getElementById("amazon-link");
 const youtubeLinkWpr = document.getElementById("youtube-link");
+
+const aboutBtn = document.getElementById("about-btn");
 
 // === Variables and links ===
 
@@ -105,10 +107,19 @@ for (let link of musicLinks) {
   });
 }
 
+aboutBtn.addEventListener("click", () => {
+  window.location = "pages/about.html";
+});
 // === Featured Music Parallax Effect ===
 
 window.addEventListener("scroll", function () {
   const parallax = document.querySelector(".featured-music");
   let scrollPosition = window.pageYOffset;
-  parallax.style.backgroundPositionY = `${-scrollPosition * 0.1}px`;
+  parallax.style.backgroundPositionY = `${-scrollPosition * 0.3 + 400}px`;
+});
+
+window.addEventListener("scroll", function () {
+  const parallax2 = document.querySelector(".links");
+  let scrollPosition = window.pageYOffset;
+  parallax2.style.backgroundPositionY = `${-scrollPosition * 0.3 + 670}px`;
 });

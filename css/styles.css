@@ -76,3 +76,34 @@ nav ul li a {
     font-weight: 300;
     font-size: 1.5rem;
 }
+
+a {
+    text-decoration: none;
+}
+
+button {
+    width: clamp(100px, 15vw, 300px);
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    padding: 10px 50px;
+    border-radius: 100vmax;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+}
+
+button:active {
+    background-color: rgb(214, 0, 0);
+}
+
+@media (max-width: 500px) {
+    button {
+        padding: 10px 20px;
+        width: 200px;
+    }
+}
