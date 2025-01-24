@@ -45,12 +45,34 @@ h1 {
     font-family: var(--header-font);
 }
 
+h2 {
+    font-family: var(--header-font);
+    font-weight: normal;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+p {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 300;
+}
+
 header {
     position: absolute;
     top: 0;
-    right: 0;
     z-index: 10;
     padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header h4 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-family: var(--header-font);
+    margin-right: auto;
+    color: var(--accent-color);
 }
 
 nav ul {
@@ -105,6 +127,18 @@ button:active {
     button {
         padding: 10px 20px;
         width: 200px;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    header h4 {
+        margin: unset;
+    }
+
+    header nav {
+        display: none;
     }
 }
 

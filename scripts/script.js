@@ -110,22 +110,25 @@ for (let link of musicLinks) {
 aboutBtn.addEventListener("click", () => {
   window.location = "pages/about.html";
 });
-// === Featured Music Parallax Effect ===
+// === Parallax Effect ===
 
 window.addEventListener("scroll", function () {
-  const parallax = document.querySelector(".featured-music");
   let scrollPosition = window.pageYOffset;
-  parallax.style.backgroundPositionY = `${-scrollPosition * 0.3 + 400}px`;
-});
 
-window.addEventListener("scroll", function () {
-  const parallax2 = document.querySelector(".links");
-  let scrollPosition = window.pageYOffset;
-  parallax2.style.backgroundPositionY = `${-scrollPosition * 0.3 + 670}px`;
-});
+  const parallaxElements = [
+    { selector: ".featured-music", offset: 400 },
+    { selector: ".links", offset: 670 },
+    { selector: ".newsletter-section", offset: 1250 },
+    { selector: "#release-countdown", offset: -200 },
+    { selector: "#about-section", offset: 1000 },
+  ];
 
-window.addEventListener("scroll", function () {
-  const parallax3 = document.querySelector(".newsletter-section");
-  let scrollPosition = window.pageYOffset;
-  parallax3.style.backgroundPositionY = `${-scrollPosition * 0.3 + 1250}px`;
+  parallaxElements.forEach((element) => {
+    const parallax = document.querySelector(element.selector);
+    if (parallax) {
+      parallax.style.backgroundPositionY = `${
+        -scrollPosition * 0.3 + element.offset
+      }px`;
+    }
+  });
 });

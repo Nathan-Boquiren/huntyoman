@@ -12,42 +12,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(rgb(51, 51, 51), black);
+    background-image: url(../imgs/bgs/street-bg.webp);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     position: relative;
     overflow-x: hidden;
     overflow-y: hidden;
 }
 
-#release-countdown::before, #release-countdown::after {
+#release-countdown::after {
     content: '';
     position: absolute;
     inset: 0;
-    filter: blur(200px);
-    width: 50%;
-    aspect-ratio: 1;
-    background-color: rgba(255, 0, 0, 0.3);
-    border-radius: 100vmax;
-}
-
-#release-countdown::before {
-    top: 0;
-    left: 0;
-    transform: translate(-20%, -80%);
-}
-
-#release-countdown::after {
-    bottom: 0;
-    right: 0;
-    transform: translate(110%, 80%);
-}
-
-.gradient-background {
-    position: absolute;
-    inset: 0;
+    background: linear-gradient(var(--dark-color), rgba(0, 0, 0, 0), var(--dark-color));
+    backdrop-filter: brightness(0.4);
     height: 100%;
     width: 100%;
     z-index: 1;
-    background: linear-gradient(var(--dark-color), transparent, transparent, transparent, var(--dark-color));
 }
 
 #release-countdown h2 {
@@ -62,7 +45,7 @@
 #time-left-container {
     display: flex;
     gap: 2vw;
-    z-index: 1;
+    z-index: 2;
 }
 
 #time-left-container span {
@@ -115,12 +98,12 @@
 
 .hero img:nth-child(1) {
     filter: saturate(0);
-    animation: fadeIn 1.5s ease forwards;
+    /* animation: fadeIn 1.5s ease forwards; */
 }
 
 .hero img:nth-child(3) {
     z-index: 3;
-    animation: fadeIn 1s ease forwards;
+    /* animation: fadeIn 1s ease forwards; */
 }
 
 .hero::before {
@@ -155,7 +138,7 @@ h1 {
     font-weight: normal;
     letter-spacing: 1px;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 2s ease forwards;
+    /* animation: fadeIn 2s ease forwards; */
 }
 
 /* Featured Music Section */
@@ -169,7 +152,7 @@ h1 {
     min-height: 80vh;
     flex-wrap: wrap;
     gap: 50px;
-    background-image: url(../imgs/bgs/street-bg.webp);
+    background-image: url(../imgs/album-cover-1.webp);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -182,7 +165,7 @@ h1 {
     position: absolute;
     inset: 0;
     background: linear-gradient(var(--dark-color), rgba(0, 0, 0, 0), var(--dark-color));
-    backdrop-filter: brightness(0.5);
+    backdrop-filter: brightness(0.3) blur(7px);
     height: 100%;
     width: 100%;
     z-index: 1;
@@ -195,14 +178,6 @@ h1 {
     gap: 30px;
     z-index: 2;
 }
-
-h2 {
-    font-family: var(--header-font);
-    font-weight: normal;
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
-}
-
 
 .featured-music .text h2 {
     animation: breathe 7s ease infinite;
@@ -222,9 +197,7 @@ h2 {
     }
 }
 
-p {
-    font-size: clamp(1.1rem, 3vw, 1.5rem);
-}
+
 
 /* .featured-music .text button.cta {
     width: clamp(200px, 35vw, 300px);
@@ -268,7 +241,6 @@ p {
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-
     position: relative;
 }
 
@@ -301,7 +273,6 @@ p {
         --gradient-angle: 360deg;
     }
 }
-
 
 /* Links Section */
 
@@ -432,6 +403,7 @@ p {
     text-align: center;
     margin-top: 15px;
     transition: all 0.3s ease;
+    z-index: 2;
 }
 
 .link-wrapper:hover img {
@@ -454,10 +426,31 @@ p {
 }
 
 /* About section */
+
 .about-section {
     display: flex;
     gap: 5vw;
     padding: 10vw;
+    position: relative;
+    background-image: url(../imgs/bgs/texture-bg.webp);
+    background-size: cover;
+    background-position: center right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.about-section::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: linear-gradient(var(--dark-color),
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2),
+            var(--dark-color));
+    z-index: -1;
 }
 
 .about-section .image-wrapper {
@@ -466,7 +459,7 @@ p {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: 180%;
-    aspect-ratio: 4/5;
+    aspect-ratio: 1;
     border-radius: 20px;
     position: relative;
 }
@@ -477,7 +470,6 @@ p {
     inset: -0.2rem;
     z-index: -1;
     background: conic-gradient(from var(--gradient-angle), red, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3), red);
-
     border-radius: inherit;
     animation: rotation 2s linear infinite;
 }
@@ -498,7 +490,6 @@ p {
         min-width: 200px;
         max-width: 300px;
         margin: 0 auto;
-        aspect-ratio: 1;
     }
 }
 
@@ -512,7 +503,7 @@ p {
         margin: 0 5vw;
     }
 
-    .about-section .text-wrapper h2 {
+    .about-section .text-wrapper h2, .about-section .text-wrapper p {
         text-align: center;
     }
 }
@@ -571,7 +562,6 @@ p {
     width: 100%;
     z-index: 0;
 }
-
 
 .newsletter-section form, .newsletter-section h2, .newsletter-section p {
     z-index: 2;
