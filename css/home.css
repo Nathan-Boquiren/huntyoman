@@ -98,12 +98,10 @@
 
 .hero img:nth-child(1) {
     filter: saturate(0);
-    /* animation: fadeIn 1.5s ease forwards; */
 }
 
 .hero img:nth-child(3) {
     z-index: 3;
-    /* animation: fadeIn 1s ease forwards; */
 }
 
 .hero::before {
@@ -129,17 +127,117 @@
 }
 
 h1 {
-    margin-top: 10%;
     margin-top: clamp(140px, 10%, 300px);
     z-index: 2;
-    color: var(--dark-color);
     color: var(--accent-color);
     font-size: 10vw;
     font-weight: normal;
     letter-spacing: 1px;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    /* animation: fadeIn 2s ease forwards; */
 }
+
+
+
+
+/* Test Hero 2 */
+
+
+.hero-2 {
+    height: 100vh;
+    width: 100%;
+    padding: 0 0 10vh;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-image: url(../imgs/bgs/texture-bg.webp);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.hero-2 img {
+    width: 50%;
+    height: auto;
+    z-index: 1;
+}
+
+.hero-2::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(var(--dark-color),
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2),
+            var(--dark-color));
+    z-index: 0;
+}
+
+.hero-text {
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transform: translateX(-20%);
+    z-index: 1;
+}
+
+.hero-text h1 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-size: clamp(3rem, 7vw, 10rem);
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hero-text div {
+    display: flex;
+    gap: 50px;
+    transform: translateY(-50%);
+    align-self: flex-end;
+}
+
+.hero-text div h3 {
+    font-size: 2vw;
+    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 2rem);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+
+}
+
+
+@media (max-width: 500px) {
+    .hero-2 {
+        justify-content: center;
+        height: 80vh;
+        align-items: center;
+    }
+
+    .hero-2 img {
+        width: 100%;
+        height: auto;
+        min-width: 250px;
+    }
+
+    .hero-text {
+        margin-top: 0;
+        transform: translateX(0%) translateY(-50%);
+    }
+}
+
+
+
+
+
+
 
 /* Featured Music Section */
 
@@ -196,8 +294,6 @@ h1 {
         transform: scale(1);
     }
 }
-
-
 
 /* .featured-music .text button.cta {
     width: clamp(200px, 35vw, 300px);
@@ -423,6 +519,67 @@ h1 {
 
 .link-wrapper:hover h3 {
     font-weight: 400;
+}
+
+/* Embedded Spotify Section */
+
+.embedded-spotify {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../imgs/bgs/arrow-grapich-bg.webp);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.embedded-spotify::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(var(--dark-color), transparent, transparent, var(--dark-color));
+    backdrop-filter: brightness(0.3);
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.iframe-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: 352px;
+    min-width: 250px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.iframe-wrapper::before, .iframe-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: -0.2rem;
+    z-index: 0;
+    background: conic-gradient(from var(--gradient-angle), red, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3), red);
+
+    border-radius: inherit;
+    animation: rotation 2s linear infinite;
+}
+
+.iframe-wrapper::after {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    position: relative;
+    z-index: 1;
 }
 
 /* About section */

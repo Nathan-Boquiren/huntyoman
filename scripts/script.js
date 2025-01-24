@@ -139,6 +139,8 @@ window.addEventListener("scroll", function () {
     { selector: ".newsletter-section", offset: 1250 },
     { selector: "#release-countdown", offset: -200 },
     { selector: "#about-section", offset: 1000 },
+    { selector: "#hero-2", offset: 0 },
+    { selector: ".embedded-spotify", offset: 950 },
   ];
 
   parallaxElements.forEach((element) => {
@@ -170,4 +172,21 @@ document.addEventListener("DOMContentLoaded", () => {
   fadeInElements.forEach((element) => {
     observer.observe(element);
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const linkWrappers = document.querySelectorAll(".link-wrapper");
+
+  function onScroll() {
+    linkWrappers.forEach((wrapper) => {
+      const rect = wrapper.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        wrapper.style.setProperty("--delay", wrapper.dataset.delay);
+        wrapper.classList.add("visible");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", onScroll);
+  onScroll(); // Trigger on load
 });

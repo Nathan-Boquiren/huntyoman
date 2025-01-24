@@ -59,6 +59,23 @@ body {
     animation: fadeIn 0.5s ease-out forwards;
 }
 
+.link-wrapper {
+    opacity: 0;
+    transition: opacity var(--duration, 0.5s) ease-out;
+}
+
+.link-wrapper.visible {
+    opacity: 1;
+}
+
+.link-wrapper[data-delay] {
+    transition-delay: var(--delay, 0s);
+}
+
+.link-wrapper[data-duration] {
+    --duration: attr(data-duration);
+}
+
 h1 {
     font-family: var(--header-font);
 }
@@ -67,6 +84,7 @@ h2 {
     font-family: var(--header-font);
     font-weight: normal;
     font-size: clamp(2.5rem, 7vw, 5rem);
+    text-wrap: pretty;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
