@@ -548,7 +548,7 @@ h1 {
     background-attachment: fixed;
     position: relative;
     min-height: 50vh;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
 
 }
 
@@ -571,6 +571,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .newsletter-section input[type="email"] {
@@ -587,7 +588,7 @@ h1 {
 
 .newsletter-section .input-wrapper {
     position: relative;
-    width: clamp(200px, 50%, 400px);
+    width: clamp(250px, 50%, 400px);
     border-radius: 15px;
     display: flex;
     align-self: center;
@@ -629,7 +630,8 @@ h1 {
 }
 
 .newsletter-section form button {
-    width: clamp(150px, 30%, 250px);
+    width: clamp(250px, 30%, 250px);
     font-size: clamp(1rem, 2vw, 1.2rem);
     border-radius: 15px;
+    text-wrap: pretty;
 }

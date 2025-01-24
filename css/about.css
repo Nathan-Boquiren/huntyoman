@@ -34,7 +34,6 @@ body::after {
     filter: brightness(0.3);
 }
 
-
 main {
     position: relative;
     display: flex;
@@ -106,6 +105,10 @@ main {
     padding: 10px 30px;
 }
 
+.buttons-wrapper button:nth-child(2) {
+    display: none;
+}
+
 @media (max-width: 768px) {
 
     .img-wrapper {
@@ -129,7 +132,12 @@ main {
     }
 
     .buttons-wrapper button {
-        padding: 1rem 1rem;
+        padding: 1rem;
         text-align: center;
+        width: clamp(180px, 20vw, 300px);
+    }
+
+    .buttons-wrapper button:nth-child(2) {
+        display: block;
     }
 }

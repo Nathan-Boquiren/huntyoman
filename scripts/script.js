@@ -5,6 +5,7 @@ cl(
 );
 
 // === DOM Elements ===
+const homePage = document.getElementById("home-page");
 
 const daysLeftWrapper = document.getElementById("days-left");
 const hoursLeftWrapper = document.getElementById("hours-left");
@@ -19,8 +20,7 @@ const appleLinkWpr = document.getElementById("apple-link");
 const amazonLinkWpr = document.getElementById("amazon-link");
 const youtubeLinkWpr = document.getElementById("youtube-link");
 
-const aboutBtn = document.getElementById("about-btn");
-
+const aboutBtns = document.querySelectorAll(".about-btn");
 // === Variables and links ===
 
 const links = {
@@ -107,9 +107,27 @@ for (let link of musicLinks) {
   });
 }
 
-aboutBtn.addEventListener("click", () => {
-  window.location = "pages/about.html";
+// === Page Animations ===
+
+homePage.classList.add("fade-in");
+homePage.addEventListener("animationend", () => {
+  homePage.classList.remove("fade-in");
 });
+
+aboutBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    homePage.classList.add("fade-out");
+    homePage.addEventListener(
+      "animationend",
+      () => {
+        window.location = "pages/about.html";
+      },
+      { once: true }
+    );
+  });
+});
+
 // === Parallax Effect ===
 
 window.addEventListener("scroll", function () {
