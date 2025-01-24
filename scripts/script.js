@@ -135,7 +135,7 @@ window.addEventListener("scroll", function () {
 
   const parallaxElements = [
     { selector: ".featured-music", offset: 400 },
-    { selector: ".links", offset: 670 },
+    { selector: ".links", offset: 1000 },
     { selector: ".newsletter-section", offset: 1250 },
     { selector: "#release-countdown", offset: -200 },
     { selector: "#about-section", offset: 1000 },
