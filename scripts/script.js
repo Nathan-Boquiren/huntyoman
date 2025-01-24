@@ -150,3 +150,24 @@ window.addEventListener("scroll", function () {
     }
   });
 });
+
+// Fade on scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeInElements = document.querySelectorAll(".fade-in-on-scroll");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  fadeInElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
