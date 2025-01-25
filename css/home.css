@@ -160,9 +160,7 @@
     font-weight: 300;
     font-size: clamp(1rem, 2vw, 2rem);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
-
 }
-
 
 @media (max-width: 500px) {
     .hero-2 {
@@ -183,12 +181,6 @@
     }
 }
 
-
-
-
-
-
-
 /* Featured Music Section */
 
 .featured-music {
@@ -200,7 +192,7 @@
     min-height: 80vh;
     flex-wrap: wrap;
     gap: 50px;
-    background-image: url(../imgs/album-cover-1.webp);
+    background-image: url(../imgs/album-covers/album-cover-1.webp);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -279,7 +271,6 @@
     height: clamp(260px, 40vw, 500px);
     z-index: 2;
 }
-
 
 .featured-music .image img {
     width: clamp(260px, 40vw, 500px);
@@ -562,7 +553,7 @@
 
 .about-section .image-wrapper {
     flex: 2;
-    background-image: url(../imgs/hunter-3.webp);
+    background-image: url(../imgs/profiles/hunter-3.webp);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: 180%;
