@@ -214,16 +214,25 @@ emailForm.addEventListener("submit", async (e) => {
 
     if (response.ok) {
       cl("Data submitted successfully");
-      // window.location.reload();
       document.getElementById("user-email-input").value = "";
       const submitBtn = document.getElementById("submit-btn");
       submitBtn.innerHTML = "✓";
       submitBtn.classList.add("animated-btn");
-      setTimeout(() => {
-        submitBtn.classList.remove("animated-btn");
-      }, 500);
       const confirmationMsg = document.getElementById("confirmation-msg");
-      confirmationMsg.display = "block";
+      confirmationMsg.style.display = "block";
+      setTimeout(() => {
+        confirmationMsg.style.bottom = "150px";
+        confirmationMsg.style.opacity = "1";
+        setTimeout(() => {
+          submitBtn.classList.remove("animated-btn");
+          confirmationMsg.style.bottom = "0";
+          confirmationMsg.style.transformY = "100%";
+          confirmationMsg.style.opacity = "0";
+          setTimeout(() => {
+            confirmationMsg.style.display = "none";
+          }, 100);
+        }, 2000);
+      }, 100);
     } else {
       alert("Error submitting data.");
     }
