@@ -138,11 +138,11 @@ window.addEventListener("scroll", function () {
 
   const parallaxElements = [
     { selector: ".featured-music", offset: 400 },
-    { selector: ".links", offset: 665 },
+    { selector: ".links", offset: 750 },
     { selector: ".newsletter-section", offset: 1250 },
     { selector: "#release-countdown", offset: -200 },
     { selector: "#about-section", offset: 1000 },
-    { selector: "#hero-2", offset: 0 },
+    { selector: "#hero-2", offset: 200 },
     { selector: ".embedded-spotify", offset: 950 },
   ];
 
@@ -225,6 +225,8 @@ emailForm.addEventListener("submit", async (e) => {
         confirmationMsg.style.opacity = "1";
         setTimeout(() => {
           submitBtn.classList.remove("animated-btn");
+          submitBtn.disabled = true;
+          submitBtn.style.cursor = "not-allowed";
           confirmationMsg.style.bottom = "0";
           confirmationMsg.style.transformY = "100%";
           confirmationMsg.style.opacity = "0";

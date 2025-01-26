@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: center;
     background-image: url(../imgs/bgs/street-bg.webp);
-    background-size: cover;
+    /* background-size: cover; */
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -73,12 +73,10 @@
 }
 
 
-
-
 /* Hero 2 Section*/
 
 .hero-2 {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     padding: 0 0 10vh;
     display: flex;

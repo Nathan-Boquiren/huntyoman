@@ -140,7 +140,7 @@ a {
 }
 
 button {
-    width: clamp(100px, 15vw, 300px);
+    width: clamp(180px, 20vw, 300px);
     font-weight: 600;
     background-color: transparent;
     border: 2px solid var(--accent-color);
