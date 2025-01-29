@@ -21,7 +21,7 @@ returnBtn.forEach((btn) => {
     aboutPage.addEventListener(
       "animationend",
       () => {
-        window.location = "../pages/index.html";
+        window.location = "../index.html";
       },
       { once: true }
     );
