@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotation {
+    0% {
+        --gradient-angle: 0deg;
+    }
+
+    100% {
+        --gradient-angle: 360deg;
+    }
+}
+
+:root {
+    /* Fonts */
+    --header-font: "Black Ops One", "Poppins", Arial, Helvetica, sans-serif;
+    --paragraph-font: "Roboto", Arial, Helvetica, sans-serif;
+
+    /* Colors */
+    --accent-color: #ff0000;
+    --white-color: #f4f4f4;
+    --dark-color: #0e0e0e;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--white-color);
+    font-family: var(--paragraph-font);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: clamp(280px, 70%, 600px);
+    margin: 0 auto;
+    background-color: var(--dark-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+/* === Header/Banner === */
+
+header {
+    position: relative;
+    width: 100%;
+    overflow-y: hidden;
+    z-index: 0;
+    padding: 2rem 0;
+}
+
+.bg-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+    z-index: 0;
+}
+
+h1, h2 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+h1 {
+    font-family: var(--header-font);
+    font-weight: normal;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px black;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 10px;
+}
+
+.subheading {
+    filter:
+        drop-shadow(0 0 1px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+    width: max-content;
+    padding: 5px 10px;
+    margin: 0 auto;
+    border: 1px solid white;
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+/* === Main Announcement === */
+
+.announcement-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+h3 {
+    text-align: left;
+    font-weight: 200;
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+}
+
+h4 {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    line-height: 1.5;
+    text-wrap: pretty;
+    display: inline-block;
+}
+
+.announcement-section h4 a {
+    font-style: italic;
+    text-decoration: none;
+    font-weight: 300;
+    color: var(--accent-color);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.announcement-section h4 a::before {
+    content: '';
+    inset: 0;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 0%;
+    transform: translateX(-50%);
+    background-color: red;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.announcement-section h4 a:hover {
+    color: white;
+}
+
+.announcement-section h4 a:hover::before {
+    width: 105%;
+}
+
+p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.5;
+}
+
+/* === Album/Song artwork === */
+
+.artwork-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    position: relative;
+    background-color: rgb(25, 25, 25);
+    padding: 1.5rem;
+    z-index: 0;
+}
+
+.image-wrapper {
+    width: 250px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    background-image: url(../public/imgs/album-covers/album-cover-1.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.image-wrapper::before, .image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: -0.25rem;
+    z-index: -1;
+    background: conic-gradient(from var(--gradient-angle),
+            rgb(255, 0, 0),
+            transparent,
+            transparent,
+            rgb(255, 0, 0),
+            transparent,
+            transparent,
+            rgb(255, 0, 0));
+    border-radius: inherit;
+    animation: rotation 3s linear infinite;
+    opacity: 0.3;
+    transition: all 1s ease;
+}
+
+.image-wrapper::after {
+    filter: blur(1rem);
+    opacity: 0.5;
+}
+
+.image-wrapper:hover::before, .image-wrapper:hover::after {
+    opacity: 1;
+}
+
+.artwork-section h3 {
+    min-width: 40%;
+    text-align: center;
+}
+
+/* === Links === */
+
+.links-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.links-section .link {
+    position: relative;
+    width: clamp(50px, 15%, 80px);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    height: clamp(100px, 15vw, 150px);
+
+}
+
+.links-section .link img {
+    width: 100%;
+    filter:
+        drop-shadow(0 0 3px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 9px rgba(255, 255, 255, 0.2));
+}
+
+.links-section .link h4 {
+    text-align: center;
+    font-weight: 300;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.links-section .link h4 a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.links-section .link h4 a:hover {
+    color: var(--accent-color);
+}
+
+/* === Personal Note === */
+
+.personal-note-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+p span {
+    color: red;
+    font-family: var(--header-font);
+    font-size: 1.5rem;
+}
+
+/* === Footer === */
+
+footer {
+    margin: 5vw 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+footer p, footer a {
+    font-size: 0.8rem;
+}
+
+footer a {
+    text-decoration: none;
+    transition: all 0.1s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
