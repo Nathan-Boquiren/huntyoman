@@ -124,7 +124,7 @@ aboutBtns.forEach((btn) => {
     homePage.addEventListener(
       "animationend",
       () => {
-        window.location = "about.html";
+        window.location = "pages/about.html";
       },
       { once: true }
     );
@@ -196,50 +196,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // === Form Submission ===
 
-emailForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+// emailForm.addEventListener("submit", async (e) => {
+//   e.preventDefault();
 
-  const email = {
-    email: document.getElementById("user-email-input").value,
-  };
+//   const email = {
+//     email: document.getElementById("user-email-input").value,
+//   };
 
-  try {
-    const response = await fetch("/submit-form", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(email),
-    });
+//   try {
+//     const response = await fetch("/submit-form", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(email),
+//     });
 
-    if (response.ok) {
-      cl("Data submitted successfully");
-      document.getElementById("user-email-input").value = "";
-      const submitBtn = document.getElementById("submit-btn");
-      submitBtn.innerHTML = "✓";
-      submitBtn.classList.add("animated-btn");
-      const confirmationMsg = document.getElementById("confirmation-msg");
-      confirmationMsg.style.display = "block";
-      setTimeout(() => {
-        confirmationMsg.style.bottom = "150px";
-        confirmationMsg.style.opacity = "1";
-        setTimeout(() => {
-          submitBtn.classList.remove("animated-btn");
-          submitBtn.disabled = true;
-          submitBtn.style.cursor = "not-allowed";
-          confirmationMsg.style.bottom = "0";
-          confirmationMsg.style.transformY = "100%";
-          confirmationMsg.style.opacity = "0";
-          setTimeout(() => {
-            confirmationMsg.style.display = "none";
-          }, 100);
-        }, 2000);
-      }, 100);
-    } else {
-      alert("Error submitting data.");
-    }
-  } catch (error) {
-    console.error("Error:", error);
-    alert("Error submitting data.");
-  }
-});
+//     if (response.ok) {
+//       cl("Data submitted successfully");
+//       document.getElementById("user-email-input").value = "";
+//       const submitBtn = document.getElementById("submit-btn");
+//       submitBtn.innerHTML = "✓";
+//       submitBtn.classList.add("animated-btn");
+//       const confirmationMsg = document.getElementById("confirmation-msg");
+//       confirmationMsg.style.display = "block";
+//       setTimeout(() => {
+//         confirmationMsg.style.bottom = "150px";
+//         confirmationMsg.style.opacity = "1";
+//         setTimeout(() => {
+//           submitBtn.classList.remove("animated-btn");
+//           submitBtn.disabled = true;
+//           submitBtn.style.cursor = "not-allowed";
+//           confirmationMsg.style.bottom = "0";
+//           confirmationMsg.style.transformY = "100%";
+//           confirmationMsg.style.opacity = "0";
+//           setTimeout(() => {
+//             confirmationMsg.style.display = "none";
+//           }, 100);
+//         }, 2000);
+//       }, 100);
+//     } else {
+//       alert("Error submitting data.");
+//     }
+//   } catch (error) {
+//     console.error("Error:", error);
+//     alert("Error submitting data.");
+//   }
+// });
