@@ -124,7 +124,7 @@ aboutBtns.forEach((btn) => {
     homePage.addEventListener(
       "animationend",
       () => {
-        window.location = "/pages/about.html";
+        window.location = "pages/about.html";
       },
       { once: true }
     );
