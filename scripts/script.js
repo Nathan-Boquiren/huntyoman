@@ -7,6 +7,8 @@ cl(
 // === DOM Elements ===
 const homePage = document.getElementById("home-page");
 
+const baseUrl = window.location.origin;
+
 const daysLeftWrapper = document.getElementById("days-left");
 const hoursLeftWrapper = document.getElementById("hours-left");
 const minutesLeftWrapper = document.getElementById("minutes-left");
@@ -124,7 +126,7 @@ aboutBtns.forEach((btn) => {
     homePage.addEventListener(
       "animationend",
       () => {
-        window.location = "pages/about.html";
+        window.location = `${baseUrl}/pages/about.html`;
       },
       { once: true }
     );
