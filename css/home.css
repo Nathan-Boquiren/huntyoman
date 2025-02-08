@@ -642,18 +642,60 @@
     z-index: 0;
 }
 
+/* EMBEDDED FORM */
+
+#mc_embed_signup_scroll {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.mc-field-group {}
+
+#email-label {
+    position: absolute;
+    left: 0;
+    top: -1.5rem;
+    visibility: hidden;
+}
+
+.submit-btn-mc {
+    width: clamp(250px, 30%, 250px);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    border-radius: 15px;
+    color: white;
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    padding: 10px 50px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    height: fit-content;
+}
+
+.submit-btn-mc:hover {
+    background-color: var(--accent-color);
+}
+
+.submit-btn-mc:active {
+    background-color: rgb(214, 0, 0);
+}
+
+.refferal-link-wrapper {
+    position: absolute;
+    bottom: 5vw;
+    right: 15vw;
+}
+
+
+/* ORIGINAL FORM */
+
 .newsletter-section form, .newsletter-section h2, .newsletter-section p {
     z-index: 2;
 }
 
-.newsletter-section form {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.newsletter-section input[type="email"] {
+input[type="email"] {
     padding: 10px;
     font-size: 1.2rem;
     width: 100%;
@@ -662,7 +704,7 @@
     color: var(--dark-color);
 }
 
-.newsletter-section input[type="email"]:focus {
+input[type="email"]:focus {
     outline: none;
 }
 
@@ -714,39 +756,4 @@
     font-size: clamp(1rem, 2vw, 1.2rem);
     border-radius: 15px;
     text-wrap: pretty;
-}
-
-@keyframes buttonAnimation {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.animated-btn {
-    animation: buttonAnimation 0.5s ease-in-out;
-}
-
-#confirmation-msg {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) translateY(100%);
-    opacity: 0;
-    padding: 15px;
-    border-radius: 20px;
-    z-index: 2;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    background-color: var(--dark-color);
-    width: clamp(200px, 50%, 400px);
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    transition: all 0.5s ease;
 }
