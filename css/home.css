@@ -651,8 +651,6 @@
     justify-content: center;
 }
 
-.mc-field-group {}
-
 #email-label {
     position: absolute;
     left: 0;
@@ -687,7 +685,6 @@
     bottom: 5vw;
     right: 15vw;
 }
-
 
 /* ORIGINAL FORM */
 
