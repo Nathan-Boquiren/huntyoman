@@ -91,6 +91,7 @@ h2 {
 p {
     font-size: clamp(1.1rem, 3vw, 1.5rem);
     font-weight: 300;
+    text-wrap: pretty;
 }
 
 header {

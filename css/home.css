@@ -649,6 +649,7 @@
     gap: 1rem;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #email-label {
@@ -682,8 +683,23 @@
 
 .refferal-link-wrapper {
     position: absolute;
-    bottom: 5vw;
+    bottom: 70px;
     right: 15vw;
+}
+
+@media (max-width: 500px) {
+    #mc_embed_signup_scroll {
+        gap: 10px;
+    }
+
+    .refferal-link-wrapper {
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .about-section .text-wrapper button {
+        align-self: center;
+    }
 }
 
 /* ORIGINAL FORM */
