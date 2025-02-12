@@ -124,7 +124,7 @@ aboutBtns.forEach((btn) => {
     homePage.addEventListener(
       "animationend",
       () => {
-        window.location = `/huntyoman/pages/about.html`;
+        window.location = `https://huntyoman.com/pages/about.html`;
       },
       { once: true }
     );
