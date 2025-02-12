@@ -1,0 +1,22 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 10vw;
+    text-align: center;
+}
+
+h1 {
+    font-weight: normal;
+    color: var(--accent-color);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+
+}
+
+img {
+    width: 3rem;
+    height: auto;
+}

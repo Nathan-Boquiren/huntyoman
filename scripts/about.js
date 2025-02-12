@@ -21,7 +21,7 @@ returnBtn.forEach((btn) => {
     aboutPage.addEventListener(
       "animationend",
       () => {
-        window.location = "../index.html";
+        window.location = "https://huntyoman.com/";
       },
       { once: true }
     );

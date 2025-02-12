@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/confirmation.css">
+    <!-- Favicons -->
+    <link rel="icon" href="../imgs/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../imgs/favicons/favicon.png" type="image/png">
+    <title>Subscription Confirmed</title>
+</head>
+
+<body id="confirmation-page">
+
+    <header>
+        <h4>HuntYoMan</h4>
+        <nav>
+            <ul>
+                <li class="return-btn"><a href="https://huntyoman.com/">Home</a></li>
+                <li><a href="https://huntyoman.com/pages/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Thank You!</h1>
+
+        <h3>Your subscription to our list has been confirmed.</h3>
+
+        <img src="https://www.pngall.com/wp-content/uploads/8/Green-Check-Mark-PNG-Free-Download.png" alt="checkmark">
+
+        <button class="return-btn" id="return-btn">Go Home</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HuntYoMan</p>
+    </footer>
+
+    <script>
+        const returnBtn = document.querySelectorAll(".return-btn");
+        const confirmationPage = document.getElementById("confirmation-page")
+
+        confirmationPage.classList.add("fade-in");
+        confirmationPage.addEventListener("animationend", () => {
+            confirmationPage.classList.remove("fade-in");
+        });
+        returnBtn.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                confirmationPage.classList.add("fade-out");
+                confirmationPage.addEventListener(
+                    "animationend",
+                    () => {
+                        window.location = "https://huntyoman.com/";
+                    },
+                    { once: true }
+                );
+            });
+        });
+
+    </script>
+</body>
+
+</html>
