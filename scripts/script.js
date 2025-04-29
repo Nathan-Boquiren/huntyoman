@@ -38,7 +38,7 @@ const links = {
 //
 // ↓↓↓↓↓↓↓↓↓↓ CHANGE THIS VARIABLE TO NEW RELEASE DATE ↓↓↓↓↓↓↓↓↓↓
 
-let releaseDate = new Date(`2/28/2025`);
+let releaseDate = new Date(`5/2/2025`);
 
 // ↑↑↑↑↑↑↑↑↑↑ CHANGE THIS VARIABLE TO NEW RELEASE DATE ↑↑↑↑↑↑↑↑↑↑
 //

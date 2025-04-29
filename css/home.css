@@ -533,8 +533,8 @@
 
 .about-section .image-wrapper {
     flex: 2;
-    background-image: url(../imgs/profiles/hunter-3.webp);
-    background-position: center top;
+    background-image: url(../imgs/profiles/hunter-new.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 180%;
     aspect-ratio: 1;
