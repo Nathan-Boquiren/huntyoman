@@ -1,20 +1,7 @@
 body {
-    background-image: url(../imgs/bgs/texture-bg.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: url(../imgs/bgs/texture-bg.webp) center / cover no-repeat;
+    border-image: fill 1 linear-gradient(rgb(0 0 0 / .5), rgb(0 0 0 / .5));
     position: relative;
-}
-
-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    backdrop-filter: brightness(0.5);
 }
 
 main {
@@ -23,7 +10,7 @@ main {
     gap: 2rem;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100dvh;
     padding: 0 10vw;
     text-align: center;
 }
@@ -34,13 +21,15 @@ h1 {
     font-size: clamp(2.5rem, 5vw, 5rem);
 }
 
+.checkmark {
+    font-size: clamp(3rem, 7vw, 5rem);
+    color: #32cd32;
+    text-shadow: 0 0 1rem #32cd32;
+    &::selection {background-color: transparent}
+}
+
 h3 {
     font-weight: 400;
     font-size: clamp(1rem, 2vw, 1.5rem);
-    text-wrap: pretty;
-}
-
-img {
-    width: 3rem;
-    height: auto;
+    text-wrap: balance;
 }

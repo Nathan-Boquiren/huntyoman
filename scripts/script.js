@@ -5,8 +5,6 @@ cl(
 );
 
 // === DOM Elements ===
-const homePage = document.getElementById("home-page");
-
 const daysLeftWrapper = document.getElementById("days-left");
 const hoursLeftWrapper = document.getElementById("hours-left");
 const minutesLeftWrapper = document.getElementById("minutes-left");
@@ -77,13 +75,6 @@ updateCountdown();
 // === music links ===
 
 musicLinks.forEach((link) => (link.href = links[link.dataset.link + "-link"]));
-
-// === Page Animations ===
-
-document.body.classList.add("fade-in");
-document.body.addEventListener("animationend", () => {
-  document.body.classList.remove("fade-in");
-});
 
 // === Parallax Effect ===
 
