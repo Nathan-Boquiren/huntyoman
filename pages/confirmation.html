@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/confirmation.css">
     <!-- Favicons -->
     <link rel="icon" href="../imgs/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../imgs/favicons/favicon.png" type="image/png">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/confirmation.css">
+    <!-- JavaScript Link -->
+    <script src="../scripts/confirmation.js" defer></script>
     <title>Subscription Confirmed</title>
 </head>
 
-<body id="confirmation-page">
+<body>
 
     <header>
         <h4>HuntYoMan</h4>
@@ -35,30 +37,6 @@
     <footer>
         <p>&copy; 2025 HuntYoMan</p>
     </footer>
-
-    <script>
-        const returnBtn = document.querySelectorAll(".return-btn");
-        const confirmationPage = document.getElementById("confirmation-page")
-
-        confirmationPage.classList.add("fade-in");
-        confirmationPage.addEventListener("animationend", () => {
-            confirmationPage.classList.remove("fade-in");
-        });
-        returnBtn.forEach((btn) => {
-            btn.addEventListener("click", (e) => {
-                e.preventDefault();
-                confirmationPage.classList.add("fade-out");
-                confirmationPage.addEventListener(
-                    "animationend",
-                    () => {
-                        window.location = "https://huntyoman.com/";
-                    },
-                    { once: true }
-                );
-            });
-        });
-
-    </script>
 </body>
 
 </html>

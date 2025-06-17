@@ -32,22 +32,13 @@ body {
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
-.fade-out {
-    animation: fadeIn 0.2s ease-in reverse forwards;
-}
+.fade-out {animation: fadeIn 0.2s ease-in reverse forwards}
 
-.fade-in {
-    animation: fadeIn 0.2s ease-out forwards;
-}
+.fade-in {animation: fadeIn 0.2s ease-out forwards}
 
 .fade-in-on-scroll {
     opacity: 0;
@@ -64,34 +55,28 @@ body {
     transition: opacity var(--duration, 0.5s) ease-out;
 }
 
-.link-wrapper.visible {
-    opacity: 1;
-}
+.link-wrapper.visible {opacity: 1}
 
 .link-wrapper[data-delay] {
     transition-delay: var(--delay, 0s);
 }
 
-.link-wrapper[data-duration] {
-    --duration: attr(data-duration);
-}
+.link-wrapper[data-duration] {--duration: attr(data-duration)}
 
-h1 {
-    font-family: var(--header-font);
-}
+h1, h2 {font-family: var(--header-font)}
 
 h2 {
-    font-family: var(--header-font);
     font-weight: normal;
     font-size: clamp(2.5rem, 7vw, 5rem);
-    text-wrap: pretty;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+    text-wrap: balance;
+    text-shadow: 0 0 10px rgb(255 255 255 / .5), 0 0 20px rgb(255 255 255 / .4), 0 0 30px rgb(255 255 255 / .3);
 }
 
 p {
-    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-size: clamp(1rem, 2vw, 1.3rem);
     font-weight: 300;
     text-wrap: pretty;
+    line-height: 1.5;
 }
 
 header {
@@ -116,67 +101,44 @@ nav ul {
     width: 50%;
     display: flex;
     justify-content: space-around;
-    gap: 50px;
+    gap: 3rem;
     padding: 0px 20px;
-}
-
-nav ul li {
     list-style: none;
-    transition: all 0.2s ease;
 }
 
-nav ul li:hover {
-    scale: 1.1;
-}
+nav ul li:hover a {color: var(--accent-color)}
 
 nav ul li a {
     text-decoration: none;
     font-family: var(--paragraph-font);
     font-weight: 300;
     font-size: 1.5rem;
+    transition: color 0.2s ease
 }
 
-a {
-    text-decoration: none;
-}
+a {text-decoration: none}
 
-button {
-    width: clamp(180px, 20vw, 300px);
+button, .btn {
+    width: clamp(200px, 20vw, 300px);
     font-weight: 600;
     background-color: transparent;
     border: 2px solid var(--accent-color);
     font-size: clamp(1rem, 3vw, 1.5rem);
-    padding: 10px 50px;
+    text-align: center;
+    padding-block: 10px;
     border-radius: 100vmax;
     transition: all 0.2s ease;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: var(--accent-color);
-}
+:is(button, .btn):hover {background-color: var(--accent-color)}
 
-button:active {
-    background-color: rgb(214, 0, 0);
-}
+:is(button, .btn):active {background-color: rgb(214, 0, 0)}
 
 @media (max-width: 500px) {
-    button {
-        padding: 10px 20px;
-        width: 200px;
-    }
-
-    header {
-        justify-content: center;
-    }
-
-    header h4 {
-        margin: unset;
-    }
-
-    header nav {
-        display: none;
-    }
+    header {justify-content: center}
+    header h4 {margin: unset}
+    header nav {display: none}
 }
 
 /* footer */

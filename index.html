@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/home.css">
     <!-- Favicons -->
     <link rel="icon" href="imgs/favicons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="imgs/favicons/favicon.png" type="image/png">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
+    <!-- JavaScript Link -->
+    <script src="scripts/script.js" defer></script>
     <title>HuntYoMan</title>
 </head>
 
@@ -46,13 +48,12 @@
             </div>
         </section>
 
-        <section class="hero-2" id="hero-2">
+        <section class="hero" id="hero">
             <img class="fade-in-on-scroll" src="imgs/profiles/hunter-1-foreground-2.webp" alt="image of Hunter Peeples">
 
             <div class="hero-text">
                 <h1 class="fade-in-on-scroll">HuntYoMan</h1>
-
-                <div class="fade-in-on-scroll">
+                <div class="subtitles fade-in-on-scroll">
                     <h3>Musician</h3>
                     <h3>Songwriter</h3>
                     <h3>Believer</h3>
@@ -64,10 +65,12 @@
             <div class="text fade-in-on-scroll">
                 <h2>New Song Out Now!</h2>
                 <p>Listen to my latest song on Spotify, Apple Music, and more!</p>
-                <button class="cta" id="featured-music-btn">Listen Now</button>
+                <a class="btn music-link" data-link="spotify" href="" target="_blank">Listen Now</a>
             </div>
             <div class="image fade-in-on-scroll">
-                <img src="imgs/album-covers/hunter-new.jpg" alt="album cover" id="featured-music-img">
+                <a class="music-link" data-link="spotify" href="" target="_blank">
+                    <img src="imgs/album-covers/hunter-new.jpg" alt="album cover" id="featured-music-img">
+                </a>
             </div>
         </section>
 
@@ -75,32 +78,31 @@
             <h2 class="fade-in-on-scroll">Listen to HuntYoMan</h2>
 
             <div class="links-container ">
-                <div id="spotify-link" class="link-wrapper" data-delay="0s">
+                <a class="music-link link-wrapper" data-link="spotify" data-delay="0s" target="_blank">
                     <img class="fade-in-on-scroll scroll-1" src="imgs/link-icons/spotify-logo.webp" alt="Spotify Icon">
                     <h3>Spotify</h3>
-                </div>
-                <div id="apple-link" class="link-wrapper" data-delay="0.3333s">
+                </a>
+                <a class="music-link link-wrapper" data-link="apple" data-delay="0.3333s" target="_blank">
                     <img class="fade-in-on-scroll scroll-2" src="imgs/link-icons/apple-music-logo.webp"
                         alt="Apple Music Icon">
                     <h3>Apple Music</h3>
-                </div>
-                <div id="amazon-link" class="link-wrapper" data-delay="0.6667s">
+                </a>
+                <a class="music-link link-wrapper" data-link="amazon" data-delay="0.6667s" target="_blank">
                     <img class="fade-in-on-scroll scroll-3" src="imgs/link-icons/amazon-music-logo.webp"
                         alt="Amazon Music Icon">
                     <h3>Amazon Music</h3>
-                </div>
-                <div id="youtube-link" class="link-wrapper" data-delay="1s">
+                </a>
+                <a class="music-link link-wrapper" data-link="youtube" data-delay="1s" target="_blank">
                     <img class="fade-in-on-scroll scroll-4" src="imgs/link-icons/youtube-logo.webp" alt="YouTube Icon">
                     <h3>YouTube</h3>
-                </div>
+                </a>
             </div>
         </section>
 
         <section class="embedded-spotify">
             <div class="iframe-wrapper">
-                <iframe style="border-radius:12px"
-                    src="https://open.spotify.com/embed/artist/1cdUa57VKRe88ODZxlO8WW?utm_source=generator&theme=0"
-                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                <iframe src="https://open.spotify.com/embed/artist/1cdUa57VKRe88ODZxlO8WW?utm_source=generator&theme=0"
+                    frameBorder="0" allowfullscreen=""
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"></iframe>
             </div>
@@ -110,13 +112,10 @@
             <div class="image-wrapper"></div>
             <div class="text-wrapper">
                 <h2>A little bit about me...</h2>
-                <p>
-                    Hi, I’m HuntYoMan, a 15-year-old musician and artist. I create music to glorify God and inspire
+                <p>Hi, I’m HuntYoMan, a 15-year-old musician and artist. I create music to glorify God and inspire
                     others, hoping it brings light and hope to those who need it. I'm grateful for the support of my
-                    fans and can’t wait to share more music!
-                </p>
-                <button class="about-btn" id="about-btn"><a href="https://huntyoman.com/pages/about.html">Read full bio
-                        →</a></button>
+                    fans and can’t wait to share more music!</p>
+                <a class="btn" href="https://huntyoman.com/pages/about.html">Read full bio →</a>
             </div>
         </section>
 
@@ -136,7 +135,6 @@
                         <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""
                             placeholder="Enter your email address">
                     </div>
-
 
                     <div id="mce-responses" class="clear foot">
                         <div class="response" id="mce-error-response" style="display: none;"></div>
@@ -172,8 +170,7 @@
     </footer>
 
 
-    <!-- Javascript link -->
-    <script src="scripts/script.js"></script>
+
 </body>
 
 </html>

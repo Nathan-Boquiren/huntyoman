@@ -12,15 +12,7 @@ const hoursLeftWrapper = document.getElementById("hours-left");
 const minutesLeftWrapper = document.getElementById("minutes-left");
 const secondsLeftWrapper = document.getElementById("seconds-left");
 
-const featuredMusicBtn = document.getElementById("featured-music-btn");
-const featuredMusicImg = document.getElementById("featured-music-img");
-
-const spotifyLinkWpr = document.getElementById("spotify-link");
-const appleLinkWpr = document.getElementById("apple-link");
-const amazonLinkWpr = document.getElementById("amazon-link");
-const youtubeLinkWpr = document.getElementById("youtube-link");
-
-const aboutBtns = document.querySelectorAll(".about-btn");
+const musicLinks = document.querySelectorAll(".music-link");
 
 const emailForm = document.getElementById("email-form");
 
@@ -84,31 +76,9 @@ function updateCountdown() {
 let countdownInterval = setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// === Button click events ===
+// === music links ===
 
-featuredMusicBtn.addEventListener("click", () => {
-  window.location = links["spotify-link"];
-});
-featuredMusicImg.addEventListener("click", () => {
-  window.location = links["spotify-link"];
-});
-
-function musicLinkClick(name) {
-  if (links[name]) {
-    window.location = links[name];
-  } else {
-    cl("Invalid link");
-  }
-}
-
-let musicLinks = document.getElementsByClassName("link-wrapper");
-
-for (let link of musicLinks) {
-  link.addEventListener("click", function () {
-    musicLinkClick(link.id);
-    cl(link.id);
-  });
-}
+musicLinks.forEach((link) => (link.href = links[link.dataset.link + "-link"]));
 
 // === Page Animations ===
 
@@ -117,32 +87,18 @@ homePage.addEventListener("animationend", () => {
   homePage.classList.remove("fade-in");
 });
 
-aboutBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    homePage.classList.add("fade-out");
-    homePage.addEventListener(
-      "animationend",
-      () => {
-        window.location = `https://huntyoman.com/pages/about.html`;
-      },
-      { once: true }
-    );
-  });
-});
-
 // === Parallax Effect ===
 
 window.addEventListener("scroll", function () {
   let scrollPosition = window.pageYOffset;
 
   const parallaxElements = [
-    { selector: ".featured-music", offset: 400 },
-    { selector: ".links", offset: 750 },
+    { selector: "#hero", offset: 200 },
+    { selector: ".featured-music", offset: 100 },
+    { selector: ".links", offset: 600 },
     { selector: ".newsletter-section", offset: 1250 },
     { selector: "#release-countdown", offset: -200 },
     { selector: "#about-section", offset: 1000 },
-    { selector: "#hero-2", offset: 200 },
     { selector: ".embedded-spotify", offset: 950 },
   ];
 
