@@ -97,7 +97,7 @@ header {
     position: absolute;
     top: 0;
     z-index: 10;
-    padding: 20px;
+    padding: 1.5rem 2rem;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -107,23 +107,19 @@ header h4 {
     font-size: 1.5rem;
     font-weight: normal;
     font-family: var(--header-font);
-    margin-right: auto;
     color: var(--accent-color);
+    margin-right: auto;
 }
 
 nav ul {
-    width: 50%;
     display: flex;
-    justify-content: space-around;
     gap: 3rem;
-    padding: 0px 20px;
     list-style: none;
 }
 
 nav ul li:hover a {color: var(--accent-color)}
 
 nav ul li a {
-    text-decoration: none;
     font-family: var(--paragraph-font);
     font-weight: 300;
     font-size: 1.5rem;
@@ -132,7 +128,7 @@ nav ul li a {
 
 a {text-decoration: none}
 
-button, .btn {
+.btn {
     width: clamp(200px, 20vw, 300px);
     font-weight: 600;
     background-color: transparent;
@@ -143,11 +139,9 @@ button, .btn {
     border-radius: 100vmax;
     transition: all 0.2s ease;
     cursor: pointer;
+    &:hover {background-color: var(--accent-color)}
+    &:active {background-color: rgb(214, 0, 0)}
 }
-
-:is(button, .btn):hover {background-color: var(--accent-color)}
-
-:is(button, .btn):active {background-color: rgb(214, 0, 0)}
 
 @media (max-width: 500px) {
     header {justify-content: center}
