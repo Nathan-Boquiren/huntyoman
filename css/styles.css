@@ -187,6 +187,4 @@ footer {
     width: 100%;
 }
 
-footer p {
-    font-size: clamp(0.8rem, 2vw, 1rem);
-}
+footer p {font-size: clamp(0.8rem, 2vw, 1rem)}
