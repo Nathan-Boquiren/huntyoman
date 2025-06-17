@@ -80,9 +80,9 @@ musicLinks.forEach((link) => (link.href = links[link.dataset.link + "-link"]));
 
 // === Page Animations ===
 
-homePage.classList.add("fade-in");
-homePage.addEventListener("animationend", () => {
-  homePage.classList.remove("fade-in");
+document.body.classList.add("fade-in");
+document.body.addEventListener("animationend", () => {
+  document.body.classList.remove("fade-in");
 });
 
 // === Parallax Effect ===

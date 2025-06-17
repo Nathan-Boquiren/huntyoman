@@ -2,7 +2,7 @@ body {
     position: relative;
     min-height: 100vh;
     background: url(../imgs/bgs/music-bg.webp) center right / cover no-repeat fixed;
-    border-image: fill 1 linear-gradient(rgb(0 0 0 / .8), rgb(0 0 0 / .8));
+    border-image: fill 1 linear-gradient(rgb(0 0 0 / .8), rgb(0 0 0 / .7));
     isolation: isolate;
 }
 

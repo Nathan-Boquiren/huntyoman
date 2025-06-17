@@ -1,29 +1,5 @@
-// === DOM Elements ===
-const aboutPage = document.getElementById("about-page");
-const returnBtn = document.querySelectorAll(".return-btn");
-
 // Page animation
-aboutPage.classList.add("fade-in");
-aboutPage.addEventListener("animationend", () => {
-  aboutPage.classList.remove("fade-in");
-});
-
-// === Event Listeners ===
-document.getElementById("listen-btn").addEventListener("click", () => {
-  window.location =
-    "https://open.spotify.com/artist/1cdUa57VKRe88ODZxlO8WW?si=HaMpoMNWQUaIHdkXKI5H6Q";
-});
-
-returnBtn.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    aboutPage.classList.add("fade-out");
-    aboutPage.addEventListener(
-      "animationend",
-      () => {
-        window.location = "https://huntyoman.com/";
-      },
-      { once: true }
-    );
-  });
+document.body.classList.add("fade-in");
+document.body.addEventListener("animationend", () => {
+  document.body.classList.remove("fade-in");
 });
