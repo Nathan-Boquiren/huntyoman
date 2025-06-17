@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotation {
+    0% {--gradient-angle: 0deg}
+    100% {--gradient-angle: 360deg}
+}
+
 /* === Variables === */
 
 :root {
@@ -139,6 +150,28 @@ button, .btn {
     header {justify-content: center}
     header h4 {margin: unset}
     header nav {display: none}
+}
+
+/* Glowing Border */
+
+.glow-border {
+    --border-radius: 1.5rem;
+    border-radius: var(--border-radius);
+}
+
+.glow-border::before, .glow-border::after {
+    content: "";
+    position: absolute;
+    inset: -0.2rem;
+    z-index: -1;
+    background: conic-gradient(from var(--gradient-angle), red, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.3), red);
+    border-radius: calc(var(--border-radius) + 0.2rem);
+    animation: rotation 2s linear infinite;
+}
+
+.glow-border::after {
+    filter: blur(2rem);
+    opacity: 0.5;
 }
 
 /* footer */

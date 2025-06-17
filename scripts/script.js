@@ -14,8 +14,6 @@ const secondsLeftWrapper = document.getElementById("seconds-left");
 
 const musicLinks = document.querySelectorAll(".music-link");
 
-const emailForm = document.getElementById("email-form");
-
 // === Variables and links ===
 
 const links = {
@@ -147,5 +145,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener("scroll", onScroll);
-  onScroll(); // Trigger on load
+  onScroll();
 });
